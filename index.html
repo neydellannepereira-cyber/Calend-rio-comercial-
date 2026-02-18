@@ -33,6 +33,23 @@
         .month-tab:hover { background: rgba(255,255,255,0.25); }
         .month-tab.active { background: white; color: #0d1b4c; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
         
+        /* Estilo especial para botões DIGITAL */
+        .month-tab.digital { 
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); 
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        .month-tab.digital:hover { 
+            background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%);
+            transform: translateY(-2px);
+        }
+        .month-tab.digital.active { 
+            background: linear-gradient(135deg, #5b21b6 0%, #7e22ce 100%);
+            color: white; 
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+            border: 2px solid #a855f7;
+        }
+        
         main { max-width: 1800px; margin: 0 auto; padding: 1.5rem; }
         .month-view { display: none; }
         .month-view.active { display: block; }
@@ -125,6 +142,8 @@
                 <button class="month-tab active" data-month="janeiro">☀️ Janeiro</button>
                 <button class="month-tab" data-month="fevereiro">🎭 Fevereiro</button>
                 <button class="month-tab" data-month="marco">🐰 Março</button>
+                <button class="month-tab digital" data-month="fevereiro-digital">📱 Fevereiro Digital</button>
+                <button class="month-tab digital" data-month="marco-digital">📱 Março Digital</button>
             </nav>
         </div>
     </header>
@@ -317,7 +336,6 @@
                         <div class="cell-events">
                             <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
                             <span class="cell-event ev-vitaminas">💪 Semana Suplemento</span>
-                            <span class="cell-event ev-inaug">🎉 Inauguração Minas Novas</span>
                         </div>
                     </div>
                     <div class="calendar-cell">
@@ -403,7 +421,7 @@
                     <div class="timeline-item"><div class="timeline-dates">09</div><div class="timeline-name">⭐ Dia D Marca Própria</div></div>
                     <div class="timeline-item"><div class="timeline-dates">19 - 25</div><div class="timeline-name">💪 Semana Suplemento</div></div>
                     <div class="timeline-item"><div class="timeline-dates">21</div><div class="timeline-name">🎉 Inauguração Nova Serrana</div></div>
-                    <div class="timeline-item"><div class="timeline-dates">22</div><div class="timeline-name">🎉 Inauguração Minas Novas</div></div>
+
                     <div class="timeline-item"><div class="timeline-dates">26 - 31</div><div class="timeline-name">📚 Volta às Aulas</div></div>
                     <div class="timeline-item"><div class="timeline-dates">29 - 31</div><div class="timeline-name">💊 Dia do Genérico / Vitaminas MP</div></div>
                 </div>
@@ -450,7 +468,6 @@
                         <div class="cell-events">
                             <span class="cell-event ev-encarte">📰 Encarte I</span>
                             <span class="cell-event ev-volta">📚 Volta às Aulas</span>
-                            <span class="cell-event ev-inaug">🎉 Inauguração Cascatinha</span>
                         </div>
                     </div>
                     <div class="calendar-cell">
@@ -517,6 +534,7 @@
                             <span class="cell-event ev-verao">☀️ Campanha de Verão</span>
                             <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
                             <span class="cell-event ev-fds">🔥 Oferta FDS</span>
+                            <span class="cell-event ev-inaug">🎉 Inauguração Cascatinha</span>
                         </div>
                     </div>
                     <div class="calendar-cell">
@@ -586,6 +604,7 @@
                             <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
                             <span class="cell-event ev-verao">☀️ Campanha de Verão</span>
                             <span class="cell-event ev-fds">🔥 Oferta FDS</span>
+                            <span class="cell-event ev-inaug">🎉 Inauguração Minas Novas</span>
                         </div>
                     </div>
                     <div class="calendar-cell">
@@ -669,7 +688,8 @@
                     <div class="timeline-item"><div class="timeline-dates">23 - 28</div><div class="timeline-name">💪 Semana Suplemento</div></div>
                     <div class="timeline-item"><div class="timeline-dates">26 - 28</div><div class="timeline-name">🧹 Festival de Limpeza</div></div>
                     <div class="timeline-item"><div class="timeline-dates">05-08, 12-15, 19-22, 26-28</div><div class="timeline-name">🔥 Ofertas FDS (todo fim de semana)</div></div>
-                    <div class="timeline-item"><div class="timeline-dates">04</div><div class="timeline-name">🎉 Inauguração Cascatinha</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">12</div><div class="timeline-name">🎉 Inauguração Cascatinha</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">20</div><div class="timeline-name">🎉 Inauguração Minas Novas</div></div>
                     <div class="timeline-item"><div class="timeline-dates">06</div><div class="timeline-name">⭐ Dia D Marca Própria</div></div>
                 </div>
             </div>
@@ -729,6 +749,7 @@
                             <span class="cell-event ev-encarte">📰 Encarte I - Mês Consumidor</span>
                             <span class="cell-event ev-mulher">👩 Semana da Mulher / Dermo</span>
                             <span class="cell-event ev-mp">⭐ Dia D Marca Própria</span>
+                            <span class="cell-event ev-inaug">🎉 Inauguração Marajoara (F300)</span>
                         </div>
                     </div>
                     <div class="calendar-cell mulher-bg">
@@ -752,7 +773,6 @@
                         <div class="cell-events">
                             <span class="cell-event ev-encarte">📰 Encarte I - Mês Consumidor</span>
                             <span class="cell-event ev-consumidor">🛒 Semana do Consumidor</span>
-                            <span class="cell-event ev-inaug">🎉 Inauguração Marajoara</span>
                         </div>
                     </div>
                     <div class="calendar-cell destaque-bg">
@@ -932,7 +952,7 @@
                     <div class="timeline-item"><div class="timeline-dates">16 - 31</div><div class="timeline-name">📰 Encarte II (Pré-Páscoa) + CMP</div></div>
                     <div class="timeline-item"><div class="timeline-dates">02 - 08</div><div class="timeline-name">👩 Semana do Dermo / Semana da Mulher (Destaque dia 8)</div></div>
                     <div class="timeline-item"><div class="timeline-dates">06</div><div class="timeline-name">⭐ Dia D Marca Própria</div></div>
-                    <div class="timeline-item"><div class="timeline-dates">09</div><div class="timeline-name">🎉 Inauguração Marajoara (Filial 300)</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">06</div><div class="timeline-name">🎉 Inauguração Marajoara (Filial 300)</div></div>
                     <div class="timeline-item"><div class="timeline-dates">09 - 15</div><div class="timeline-name">🛒 Semana do Consumidor</div></div>
                     <div class="timeline-item"><div class="timeline-dates">15</div><div class="timeline-name">🎯 Dia do Consumidor</div></div>
                     <div class="timeline-item"><div class="timeline-dates">17</div><div class="timeline-name">🎉 Inauguração Olímpia</div></div>
@@ -944,7 +964,567 @@
             </div>
         </section>
 
-        <!-- Legenda -->
+
+        <!-- ==================== FEVEREIRO 2026 DIGITAL ==================== -->
+        <section class="month-view" id="fevereiro-digital">
+            <div class="calendar-section">
+                <div style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); color: white; padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; text-align: center;">
+                    <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">📱 CALENDÁRIO DIGITAL - FEVEREIRO 2026</h2>
+                    <p style="font-size: 0.9rem; opacity: 0.95;">Campanhas exclusivas para canais digitais</p>
+                </div>
+                
+                <div class="calendar-header">
+                    <div class="calendar-day-header weekend">Domingo</div>
+                    <div class="calendar-day-header">Segunda</div>
+                    <div class="calendar-day-header">Terça</div>
+                    <div class="calendar-day-header">Quarta</div>
+                    <div class="calendar-day-header">Quinta</div>
+                    <div class="calendar-day-header">Sexta</div>
+                    <div class="calendar-day-header">Sábado</div>
+                </div>
+                <div class="calendar-grid">
+                    <!-- Fevereiro 2026 Digital começa no DOMINGO -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">1</div>
+                        <div class="cell-events">
+                            <span class="cell-event" style="background: #fecaca; color: #b91c1c;">👶 Semana Baby</span>
+                            <span class="cell-event ev-volta">📚 Volta às Aulas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">2</div>
+                        <div class="cell-events">
+                            <span class="cell-event" style="background: #fecaca; color: #b91c1c;">👶 Semana Baby</span>
+                            <span class="cell-event ev-volta">📚 Volta às Aulas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">3</div>
+                        <div class="cell-events">
+                            <span class="cell-event" style="background: #fecaca; color: #b91c1c;">👶 Semana Baby</span>
+                            <span class="cell-event ev-volta">📚 Volta às Aulas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">4</div>
+                        <div class="cell-events">
+                            <span class="cell-event" style="background: #fecaca; color: #b91c1c;">👶 Semana Baby</span>
+                            <span class="cell-event ev-volta">📚 Volta às Aulas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">5</div>
+                        <div class="cell-events">
+                            <span class="cell-event" style="background: #fecaca; color: #b91c1c;">👶 Semana Baby</span>
+                            <span class="cell-event ev-volta">📚 Volta às Aulas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">6</div>
+                        <div class="cell-events">
+                            <span class="cell-event" style="background: #fecaca; color: #b91c1c;">👶 Semana Baby</span>
+                            <span class="cell-event ev-volta">📚 Volta às Aulas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                            <span class="cell-event ev-dermo">📅 Semana D</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">7</div>
+                        <div class="cell-events">
+                            <span class="cell-event" style="background: #fecaca; color: #b91c1c;">👶 Semana Baby</span>
+                            <span class="cell-event ev-volta">📚 Volta às Aulas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee</span>
+                            <span class="cell-event ev-dermo">📅 Semana D</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Semana 2 -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">8</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                            <span class="cell-event ev-generico">📞 Dia do Genérico Tele</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">9</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                            <span class="cell-event ev-generico">📞 Dia do Genérico Tele</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%) !important;">
+                        <div class="cell-date">10</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                            <span class="cell-event" style="background: #1e40af; color: white;">⭐ INDIANA DAY</span>
+                            <span class="cell-event ev-generico">📞 Dia do Genérico Tele</span>
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">11</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                            <span class="cell-event ev-generico">📞 Dia do Genérico Tele</span>
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner e Época (maquiagem)/Shopee</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">12</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                            <span class="cell-event ev-generico">📞 Dia do Genérico Tele</span>
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner e Época (maquiagem)/Shopee</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">13</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                            <span class="cell-event ev-generico">📞 Dia do Genérico Tele</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🧹 Sicoob (material de limpeza)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">14</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🧹 Sicoob (material de limpeza)</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Semana 3 - Carnaval -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">15</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell carnaval-bg">
+                        <div class="cell-date">16</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-carnaval">🎭 Carnaval</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell carnaval-bg">
+                        <div class="cell-date">17</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-carnaval">🎭 Carnaval</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell carnaval-bg">
+                        <div class="cell-date">18</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-carnaval">🎭 Carnaval</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">19</div>
+                        <div class="cell-events">
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">20</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">21</div>
+                        <div class="cell-events">
+                        </div>
+                    </div>
+                    
+                    <!-- Semana 4 -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">22</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">23</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplemento e Vitaminas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee/Magalu (dermo)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">24</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplemento e Vitaminas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee/Magalu (dermo)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">25</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplemento e Vitaminas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee/Magalu (dermo)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">26</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplemento e Vitaminas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee/Magalu (dermo)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">27</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplemento e Vitaminas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee/Magalu (dermo)</span>
+                            <span class="cell-event ev-limpeza">🧹 Festival de Limpeza</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">28</div>
+                        <div class="cell-events">
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee/Magalu (dermo)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-section">
+                <h3 class="section-title">📋 Resumo das Campanhas Digitais - Fevereiro 2026</h3>
+                <div class="timeline">
+                    <div class="timeline-item"><div class="timeline-dates">01 - 07</div><div class="timeline-name">👶 Semana Baby</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">01 - 07</div><div class="timeline-name">📚 Volta às Aulas</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">01 - 07</div><div class="timeline-name">🛍️ Renner/Época/Shopee</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">06 - 14</div><div class="timeline-name">📅 Semana D</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">09 - 15</div><div class="timeline-name">✨ Semana do Dermo</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">08 - 13</div><div class="timeline-name">📞 Dia do Genérico Tele</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">10</div><div class="timeline-name">⭐ INDIANA DAY</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">10 - 12</div><div class="timeline-name">💰 Tá Barato no App</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">11 - 14</div><div class="timeline-name">🛍️ Renner/Época (maquiagem)/Shopee</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">13 - 14</div><div class="timeline-name">🧹 Sicoob (material de limpeza)</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">16 - 18</div><div class="timeline-name">🎭 Carnaval</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">23 - 27</div><div class="timeline-name">💪 Semana Suplemento e Vitaminas</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">23 - 28</div><div class="timeline-name">🛍️ Renner/Época/Shopee/Magalu (dermo)</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">27</div><div class="timeline-name">🧹 Festival de Limpeza</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">06, 08, 13, 15, 20, 22</div><div class="timeline-name">⚡ Oferta Relâmpago</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MARÇO 2026 DIGITAL ==================== -->
+        <section class="month-view" id="marco-digital">
+            <div class="calendar-section">
+                <div style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); color: white; padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; text-align: center;">
+                    <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">📱 CALENDÁRIO DIGITAL - MARÇO 2026</h2>
+                    <p style="font-size: 0.9rem; opacity: 0.95;">Campanhas exclusivas para canais digitais</p>
+                </div>
+                
+                <div class="calendar-header">
+                    <div class="calendar-day-header weekend">Domingo</div>
+                    <div class="calendar-day-header">Segunda</div>
+                    <div class="calendar-day-header">Terça</div>
+                    <div class="calendar-day-header">Quarta</div>
+                    <div class="calendar-day-header">Quinta</div>
+                    <div class="calendar-day-header">Sexta</div>
+                    <div class="calendar-day-header weekend">Sábado</div>
+                </div>
+                <div class="calendar-grid">
+                    <!-- Março 2026 Digital começa no DOMINGO -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">1</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo (Semana da Mulher)</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee (dermo, beleza, maquiagem)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">2</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo (Semana da Mulher)</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee (dermo, beleza, maquiagem)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">3</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo (Semana da Mulher)</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee (dermo, beleza, maquiagem)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">4</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo (Semana da Mulher)</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee (dermo, beleza, maquiagem)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">5</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo (Semana da Mulher)</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee (dermo, beleza, maquiagem)</span>
+                            <span class="cell-event ev-dermo">📅 Semana D</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">6</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo (Semana da Mulher)</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee (dermo, beleza, maquiagem)</span>
+                            <span class="cell-event ev-dermo">📅 Semana D</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">7</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo (Semana da Mulher)</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee (dermo, beleza, maquiagem)</span>
+                            <span class="cell-event ev-dermo">📅 Semana D</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Semana 2 - Dia da Mulher -->
+                    <div class="calendar-cell mulher-bg">
+                        <div class="cell-date weekend">8</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-mulher">💐 Dia Internacional da Mulher</span>
+                            <span class="cell-event ev-dermo">📅 Semana D</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell destaque-bg">
+                        <div class="cell-date">9</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-consumidor">🛒 Semana do Consumidor</span>
+                            <span class="cell-event ev-dermo">📅 Semana D</span>
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee (dermo, beleza, maquiagem)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell destaque-bg" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%) !important;">
+                        <div class="cell-date">10</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-consumidor">🛒 Semana do Consumidor</span>
+                            <span class="cell-event ev-dermo">📅 Semana D</span>
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event" style="background: #1e40af; color: white;">⭐ INDIANA DAY</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee (dermo, beleza, maquiagem)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell destaque-bg">
+                        <div class="cell-date">11</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-consumidor">🛒 Semana do Consumidor</span>
+                            <span class="cell-event ev-dermo">📅 Semana D</span>
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee (dermo, beleza, maquiagem)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell destaque-bg">
+                        <div class="cell-date">12</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-consumidor">🛒 Semana do Consumidor</span>
+                            <span class="cell-event ev-dermo">📅 Semana D</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee (dermo, beleza, maquiagem)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell destaque-bg">
+                        <div class="cell-date">13</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-consumidor">🛒 Semana do Consumidor</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee (dermo, beleza, maquiagem)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell destaque-bg">
+                        <div class="cell-date weekend">14</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-consumidor">🛒 Semana do Consumidor</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🛍️ Renner/Época/Shopee (dermo, beleza, maquiagem)</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Semana 3 - Dia do Consumidor -->
+                    <div class="calendar-cell destaque-bg">
+                        <div class="cell-date weekend">15</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-consumidor">🎯 DIA DO CONSUMIDOR</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">16</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🧹 Sicoob (suplementos e material de limpeza)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">17</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🧹 Sicoob (suplementos e material de limpeza)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">18</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🧹 Sicoob (suplementos e material de limpeza)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">19</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span>
+                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🧹 Sicoob (suplementos e material de limpeza)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">20</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span>
+                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🧹 Sicoob (suplementos e material de limpeza)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">21</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span>
+                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🧹 Sicoob (suplementos e material de limpeza)</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Semana 4 -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">22</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                            <span class="cell-event" style="background: #fecaca; color: #b91c1c;">👶 Semana Baby</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🧹 Sicoob (suplementos e material de limpeza)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">23</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                            <span class="cell-event" style="background: #fecaca; color: #b91c1c;">👶 Semana Baby</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🧹 Sicoob (suplementos e material de limpeza)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">24</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                            <span class="cell-event" style="background: #fecaca; color: #b91c1c;">👶 Semana Baby</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🧹 Sicoob (suplementos e material de limpeza)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">25</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                            <span class="cell-event" style="background: #fecaca; color: #b91c1c;">👶 Semana Baby</span>
+                            <span class="cell-event" style="background: #d1d5db; color: #374151;">🧹 Sicoob (suplementos e material de limpeza)</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell pascoa-bg">
+                        <div class="cell-date">26</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                            <span class="cell-event" style="background: #fecaca; color: #b91c1c;">👶 Semana Baby</span>
+                            <span class="cell-event ev-generico">💊 Dia do Genérico</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell pascoa-bg">
+                        <div class="cell-date">27</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                            <span class="cell-event" style="background: #fecaca; color: #b91c1c;">👶 Semana Baby</span>
+                            <span class="cell-event ev-generico">💊 Dia do Genérico</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago - Páscoa</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell pascoa-bg">
+                        <div class="cell-date weekend">28</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                            <span class="cell-event" style="background: #fecaca; color: #b91c1c;">👶 Semana Baby</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago - Páscoa</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Semana 5 -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">29</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">30</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell">
+                        <div class="cell-date">31</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span>
+                        </div>
+                    </div>
+                    <div class="calendar-cell empty"></div>
+                    <div class="calendar-cell empty"></div>
+                    <div class="calendar-cell empty"></div>
+                    <div class="calendar-cell empty"></div>
+                </div>
+            </div>
+            
+            <div class="timeline-section">
+                <h3 class="section-title">📋 Resumo das Campanhas Digitais - Março 2026</h3>
+                <div class="timeline">
+                    <div class="timeline-item"><div class="timeline-dates">01 - 07</div><div class="timeline-name">✨ Semana do Dermo (Semana da Mulher)</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">01 - 14</div><div class="timeline-name">🛍️ Renner/Época/Shopee (dermo, beleza, maquiagem)</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">05 - 12</div><div class="timeline-name">📅 Semana D</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">08</div><div class="timeline-name">💐 Dia Internacional da Mulher</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">09 - 15</div><div class="timeline-name">🛒 Semana do Consumidor</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">09 - 11</div><div class="timeline-name">💰 Tá Barato no App (Elemento Lúdico)</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">10</div><div class="timeline-name">⭐ INDIANA DAY (dia de frete grátis nos canais digitais)</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">15</div><div class="timeline-name">🎯 DIA DO CONSUMIDOR</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">16 - 31</div><div class="timeline-name">🐰 Encarte 2 - Pré-Páscoa</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">16 - 21</div><div class="timeline-name">💪 Semana dos Suplementos e Vitaminas</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">16 - 21</div><div class="timeline-name">🧹 Sicoob (suplementos e material de limpeza)</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">19 - 21</div><div class="timeline-name">💊 Semana do Genérico Digital</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">22 - 28</div><div class="timeline-name">👶 Semana Baby</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">22 - 28</div><div class="timeline-name">🧹 Sicoob (suplementos e material de limpeza)</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">26 - 27</div><div class="timeline-name">💊 Dia do Genérico</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">27 - 28</div><div class="timeline-name">⚡ Oferta Relâmpago - Páscoa</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">05, 08, 12, 15, 20, 27</div><div class="timeline-name">⚡ Oferta Relâmpago</div></div>
+                </div>
+            </div>
+        </section>
+
+                <!-- Legenda -->
         <section class="legend-section">
             <h3 class="section-title">🎨 Legenda das Campanhas</h3>
             <div class="legend-grid">
