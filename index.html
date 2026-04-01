@@ -58,24 +58,24 @@
             box-shadow: 0 2px 12px rgba(0,0,0,0.06);
         }
         .calendar-header { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 0.5rem; }
-        .calendar-day-header { text-align: center; font-weight: 700; font-size: 0.85rem; color: var(--text-muted); padding: 0.5rem; }
+        .calendar-day-header { text-align: center; font-weight: 700; font-size: 1rem; color: var(--text-muted); padding: 0.5rem; }
         .calendar-day-header.weekend { color: #e53935; }
         .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
         
         .calendar-cell {
-            min-height: 130px; border: 1px solid var(--border); border-radius: 10px;
-            padding: 0.5rem; background: white; transition: all 0.2s;
+            min-height: 140px; border: 1px solid var(--border); border-radius: 10px;
+            padding: 0.6rem; background: white; transition: all 0.2s;
         }
         .calendar-cell:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateY(-2px); }
         .calendar-cell.empty { background: #f8fafc; border-color: transparent; min-height: 50px; }
-        .cell-date { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .cell-date { font-weight: 700; font-size: 1.25rem; margin-bottom: 0.4rem; }
         .cell-date.weekend { color: #e53935; }
         .cell-date.feriado { color: #dc2626; }
         .cell-events { display: flex; flex-direction: column; gap: 3px; }
         
         .cell-event {
-            font-size: 0.7rem; padding: 3px 6px; border-radius: 4px;
-            font-weight: 600; line-height: 1.2;
+            font-size: 0.78rem; padding: 4px 7px; border-radius: 4px;
+            font-weight: 600; line-height: 1.3;
         }
         
         .ev-encarte { background: #dbeafe; color: #1e40af; }
@@ -97,6 +97,9 @@
         .ev-coracao { background: #fee2e2; color: #be123c; }
         .ev-beijo { background: #fdf2f8; color: #9d174d; }
         .ev-baby { background: #fef9c3; color: #854d0e; }
+        .ev-maes { background: #fce7f3; color: #9d174d; }
+        .ev-trabalhador { background: #dbeafe; color: #1e40af; }
+        .ev-dli { background: #dcfce7; color: #166534; }
         
         .feriado-bg { background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%) !important; }
         .carnaval-bg { background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%) !important; }
@@ -105,31 +108,34 @@
         .mulher-bg { background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%) !important; }
         .pet-bg { background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%) !important; }
         .baby-bg { background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%) !important; }
+        .maes-bg { background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%) !important; }
+        .dli-bg { background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%) !important; }
         
         .timeline-section { background: var(--card); border-radius: 20px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-        .section-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .section-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
         .timeline { display: flex; flex-direction: column; gap: 0.5rem; }
         .timeline-item {
-            display: grid; grid-template-columns: 120px 1fr; gap: 1rem; padding: 0.75rem 1rem;
-            border-radius: 8px; background: #f8fafc; align-items: center; font-size: 0.9rem;
+            display: grid; grid-template-columns: 140px 1fr; gap: 1rem; padding: 0.85rem 1rem;
+            border-radius: 8px; background: #f8fafc; align-items: center; font-size: 1rem;
         }
-        .timeline-dates { font-weight: 700; color: var(--primary); }
-        .timeline-name { font-weight: 600; }
+        .timeline-dates { font-weight: 700; color: var(--primary); font-size: 0.95rem; }
+        .timeline-name { font-weight: 600; font-size: 0.95rem; }
         
         .legend-section { background: var(--card); border-radius: 20px; padding: 1.5rem; margin-top: 1.5rem; }
-        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem; }
-        .legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; padding: 0.5rem; background: #f8fafc; border-radius: 6px; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.5rem; }
+        .legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; padding: 0.5rem; background: #f8fafc; border-radius: 6px; }
         
         @media (max-width: 1200px) {
-            .cell-event { font-size: 0.6rem; padding: 2px 4px; }
-            .calendar-cell { min-height: 100px; }
+            .cell-event { font-size: 0.7rem; padding: 3px 5px; }
+            .calendar-cell { min-height: 110px; }
+            .cell-date { font-size: 1.1rem; }
         }
         @media (max-width: 768px) {
             .header { padding: 1rem; }
             .header-content { flex-direction: column; text-align: center; }
-            .calendar-cell { min-height: 80px; padding: 0.25rem; }
-            .cell-date { font-size: 0.9rem; }
-            .cell-event { font-size: 0.55rem; padding: 2px 3px; }
+            .calendar-cell { min-height: 90px; padding: 0.3rem; }
+            .cell-date { font-size: 1rem; }
+            .cell-event { font-size: 0.62rem; padding: 2px 4px; }
         }
     </style>
 </head>
@@ -148,9 +154,11 @@
                 <button class="month-tab" data-month="fevereiro">🎭 Fevereiro</button>
                 <button class="month-tab" data-month="marco">🐰 Março</button>
                 <button class="month-tab" data-month="abril">🌸 Abril</button>
+                <button class="month-tab" data-month="maio">🌺 Maio</button>
                 <button class="month-tab digital" data-month="fevereiro-digital">📱 Fev Digital</button>
                 <button class="month-tab digital" data-month="marco-digital">📱 Mar Digital</button>
                 <button class="month-tab digital" data-month="abril-digital">📱 Abr Digital</button>
+                <button class="month-tab digital" data-month="maio-digital">📱 Mai Digital</button>
             </nav>
         </div>
     </header>
@@ -330,10 +338,11 @@
                     <div class="calendar-cell"><div class="cell-date">23</div><div class="cell-events"><span class="cell-event ev-pascoa">📰 Encarte II Pré-Páscoa + CMP</span></div></div>
                     <div class="calendar-cell"><div class="cell-date">24</div><div class="cell-events"><span class="cell-event ev-pascoa">📰 Encarte II Pré-Páscoa + CMP</span></div></div>
                     <div class="calendar-cell"><div class="cell-date">25</div><div class="cell-events"><span class="cell-event ev-pascoa">📰 Encarte II Pré-Páscoa + CMP</span></div></div>
-                    <div class="calendar-cell pascoa-bg"><div class="cell-date">26</div><div class="cell-events"><span class="cell-event ev-pascoa">📰 Encarte II Pré-Páscoa + CMP</span><span class="cell-event ev-pascoa">🍫 Oferta FDS Chocolates</span></div></div>
+                    <!-- AJUSTE: Dia do Genérico apenas 26 e 27 -->
+                    <div class="calendar-cell pascoa-bg"><div class="cell-date">26</div><div class="cell-events"><span class="cell-event ev-pascoa">📰 Encarte II Pré-Páscoa + CMP</span><span class="cell-event ev-pascoa">🍫 Oferta FDS Chocolates</span><span class="cell-event ev-generico">💊 Dia do Genérico</span></div></div>
                     <div class="calendar-cell pascoa-bg"><div class="cell-date">27</div><div class="cell-events"><span class="cell-event ev-pascoa">📰 Encarte II Pré-Páscoa + CMP</span><span class="cell-event ev-pascoa">🍫 Oferta FDS Chocolates</span><span class="cell-event ev-generico">💊 Dia do Genérico</span></div></div>
-                    <div class="calendar-cell pascoa-bg"><div class="cell-date weekend">28</div><div class="cell-events"><span class="cell-event ev-pascoa">📰 Encarte II Pré-Páscoa + CMP</span><span class="cell-event ev-pascoa">🍫 Oferta FDS Chocolates</span><span class="cell-event ev-generico">💊 Dia do Genérico</span></div></div>
-                    <div class="calendar-cell pascoa-bg"><div class="cell-date weekend">29</div><div class="cell-events"><span class="cell-event ev-pascoa">📰 Encarte II Pré-Páscoa + CMP</span><span class="cell-event ev-pascoa">🍫 Oferta FDS Chocolates</span><span class="cell-event ev-generico">💊 Dia do Genérico</span></div></div>
+                    <div class="calendar-cell pascoa-bg"><div class="cell-date weekend">28</div><div class="cell-events"><span class="cell-event ev-pascoa">📰 Encarte II Pré-Páscoa + CMP</span><span class="cell-event ev-pascoa">🍫 Oferta FDS Chocolates</span></div></div>
+                    <div class="calendar-cell pascoa-bg"><div class="cell-date weekend">29</div><div class="cell-events"><span class="cell-event ev-pascoa">📰 Encarte II Pré-Páscoa + CMP</span><span class="cell-event ev-pascoa">🍫 Oferta FDS Chocolates</span></div></div>
                     <div class="calendar-cell"><div class="cell-date">30</div><div class="cell-events"><span class="cell-event ev-pascoa">📰 Encarte II Pré-Páscoa + CMP</span></div></div>
                     <div class="calendar-cell"><div class="cell-date">31</div><div class="cell-events"><span class="cell-event ev-pascoa">📰 Encarte II Pré-Páscoa + CMP</span></div></div>
                     <div class="calendar-cell empty"></div>
@@ -356,7 +365,7 @@
                     <div class="timeline-item"><div class="timeline-dates">16 - 22</div><div class="timeline-name">💪 Semana Suplemento</div></div>
                     <div class="timeline-item"><div class="timeline-dates">19 - 22</div><div class="timeline-name">🔥 Oferta FDS + Festival de Limpeza</div></div>
                     <div class="timeline-item"><div class="timeline-dates">26 - 29</div><div class="timeline-name">🍫 Oferta FDS Chocolates Pré-Páscoa</div></div>
-                    <div class="timeline-item"><div class="timeline-dates">27 - 29</div><div class="timeline-name">💊 Dia do Genérico</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">26 - 27</div><div class="timeline-name">💊 Dia do Genérico</div></div>
                 </div>
             </div>
         </section>
@@ -374,228 +383,39 @@
                     <div class="calendar-day-header weekend">Sábado</div>
                 </div>
                 <div class="calendar-grid">
-                    <!-- Abril 2026 começa na QUARTA -->
                     <div class="calendar-cell empty"></div>
                     <div class="calendar-cell empty"></div>
                     <div class="calendar-cell empty"></div>
-                    <div class="calendar-cell">
-                        <div class="cell-date">1</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte I</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell pascoa-bg">
-                        <div class="cell-date">2</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte I</span>
-                            <span class="cell-event ev-fds">🍫 Oferta FDS - Exclusivo Páscoa</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell pascoa-bg">
-                        <div class="cell-date">3</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte I</span>
-                            <span class="cell-event ev-fds">🍫 Oferta FDS - Exclusivo Páscoa</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell pascoa-bg">
-                        <div class="cell-date weekend">4</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte I</span>
-                            <span class="cell-event ev-fds">🍫 Oferta FDS - Exclusivo Páscoa</span>
-                        </div>
-                    </div>
-
-                    <!-- Semana 2 -->
-                    <div class="calendar-cell pascoa-bg">
-                        <div class="cell-date weekend">5</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte I</span>
-                            <span class="cell-event ev-pascoa">🐣 Páscoa</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="cell-date">6</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte I</span>
-                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="cell-date">7</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte I</span>
-                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="cell-date">8</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte I</span>
-                            <span class="cell-event ev-mp">⭐ Dia D Marca Própria</span>
-                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="cell-date">9</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte I</span>
-                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="cell-date">10</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte I</span>
-                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="cell-date weekend">11</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte I</span>
-                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
-                        </div>
-                    </div>
-
-                    <!-- Semana 3 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date weekend">12</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II</span>
-                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="cell-date">13</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II</span>
-                            <span class="cell-event ev-beijo">💋 Dia do Beijo</span>
-                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="cell-date">14</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II</span>
-                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="cell-date">15</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II</span>
-                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="cell-date">16</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="cell-date">17</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="cell-date weekend">18</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span>
-                        </div>
-                    </div>
-
-                    <!-- Semana 4 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date weekend">19</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="cell-date">20</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell feriado-bg">
-                        <div class="cell-date feriado">21</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-feriado">🏛️ Tiradentes - Feriado</span>
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="cell-date">22</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell pet-bg">
-                        <div class="cell-date">23</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                            <span class="cell-event ev-pet">🐾 Mundo Pet</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell pet-bg">
-                        <div class="cell-date">24</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                            <span class="cell-event ev-pet">🐾 Mundo Pet</span>
-                            <span class="cell-event ev-coracao">❤️ Cuidado com o Coração</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell pet-bg">
-                        <div class="cell-date weekend">25</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                            <span class="cell-event ev-pet">🐾 Mundo Pet</span>
-                        </div>
-                    </div>
-
-                    <!-- Semana 5 -->
-                    <div class="calendar-cell pet-bg">
-                        <div class="cell-date weekend">26</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                            <span class="cell-event ev-pet">🐾 Mundo Pet</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell baby-bg">
-                        <div class="cell-date">27</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                            <span class="cell-event ev-baby">👶 Feirão Baby</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell baby-bg">
-                        <div class="cell-date">28</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                            <span class="cell-event ev-baby">👶 Feirão Baby</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell baby-bg">
-                        <div class="cell-date">29</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                            <span class="cell-event ev-baby">👶 Feirão Baby</span>
-                        </div>
-                    </div>
-                    <div class="calendar-cell baby-bg">
-                        <div class="cell-date">30</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
-                            <span class="cell-event ev-baby">👶 Feirão Baby</span>
-                        </div>
-                    </div>
+                    <div class="calendar-cell"><div class="cell-date">1</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte I</span></div></div>
+                    <div class="calendar-cell pascoa-bg"><div class="cell-date">2</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte I</span><span class="cell-event ev-fds">🍫 Oferta FDS - Exclusivo Páscoa</span></div></div>
+                    <div class="calendar-cell pascoa-bg"><div class="cell-date">3</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte I</span><span class="cell-event ev-fds">🍫 Oferta FDS - Exclusivo Páscoa</span></div></div>
+                    <div class="calendar-cell pascoa-bg"><div class="cell-date weekend">4</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte I</span><span class="cell-event ev-fds">🍫 Oferta FDS - Exclusivo Páscoa</span></div></div>
+                    <div class="calendar-cell pascoa-bg"><div class="cell-date weekend">5</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte I</span><span class="cell-event ev-pascoa">🐣 Páscoa</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">6</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte I</span><span class="cell-event ev-dermo">✨ Semana do Dermo</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">7</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte I</span><span class="cell-event ev-dermo">✨ Semana do Dermo</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">8</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte I</span><span class="cell-event ev-mp">⭐ Dia D Marca Própria</span><span class="cell-event ev-dermo">✨ Semana do Dermo</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">9</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte I</span><span class="cell-event ev-dermo">✨ Semana do Dermo</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">10</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte I</span><span class="cell-event ev-dermo">✨ Semana do Dermo</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date weekend">11</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte I</span><span class="cell-event ev-dermo">✨ Semana do Dermo</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date weekend">12</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II</span><span class="cell-event ev-dermo">✨ Semana do Dermo</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">13</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II</span><span class="cell-event ev-beijo">💋 Dia do Beijo</span><span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">14</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II</span><span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">15</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II</span><span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">16</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II + CMP</span><span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">17</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II + CMP</span><span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date weekend">18</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II + CMP</span><span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date weekend">19</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II + CMP</span><span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">20</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II + CMP</span></div></div>
+                    <div class="calendar-cell feriado-bg"><div class="cell-date feriado">21</div><div class="cell-events"><span class="cell-event ev-feriado">🏛️ Tiradentes - Feriado</span><span class="cell-event ev-encarte">📰 Encarte II + CMP</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">22</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II + CMP</span></div></div>
+                    <div class="calendar-cell pet-bg"><div class="cell-date">23</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II + CMP</span><span class="cell-event ev-pet">🐾 Mundo Pet</span></div></div>
+                    <div class="calendar-cell pet-bg"><div class="cell-date">24</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II + CMP</span><span class="cell-event ev-pet">🐾 Mundo Pet</span><span class="cell-event ev-coracao">❤️ Cuidado com o Coração</span></div></div>
+                    <div class="calendar-cell pet-bg"><div class="cell-date weekend">25</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II + CMP</span><span class="cell-event ev-pet">🐾 Mundo Pet</span></div></div>
+                    <div class="calendar-cell pet-bg"><div class="cell-date weekend">26</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II + CMP</span><span class="cell-event ev-pet">🐾 Mundo Pet</span></div></div>
+                    <div class="calendar-cell baby-bg"><div class="cell-date">27</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II + CMP</span><span class="cell-event ev-baby">👶 Feirão Baby</span></div></div>
+                    <div class="calendar-cell baby-bg"><div class="cell-date">28</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II + CMP</span><span class="cell-event ev-baby">👶 Feirão Baby</span></div></div>
+                    <div class="calendar-cell baby-bg"><div class="cell-date">29</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II + CMP</span><span class="cell-event ev-baby">👶 Feirão Baby</span></div></div>
+                    <div class="calendar-cell baby-bg"><div class="cell-date">30</div><div class="cell-events"><span class="cell-event ev-encarte">📰 Encarte II + CMP</span><span class="cell-event ev-baby">👶 Feirão Baby</span></div></div>
                     <div class="calendar-cell empty"></div>
                     <div class="calendar-cell empty"></div>
                 </div>
@@ -616,6 +436,635 @@
                     <div class="timeline-item"><div class="timeline-dates">23 - 26</div><div class="timeline-name">🐾 Mundo Pet</div></div>
                     <div class="timeline-item"><div class="timeline-dates">24</div><div class="timeline-name">❤️ Cuidado com o Coração</div></div>
                     <div class="timeline-item"><div class="timeline-dates">27 - 30</div><div class="timeline-name">👶 Feirão Baby</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MAIO 2026 ==================== -->
+        <!-- Maio 2026: começa na SEXTA-FEIRA (dia 1) -->
+        <section class="month-view" id="maio">
+            <div class="calendar-section">
+                <div class="calendar-header">
+                    <div class="calendar-day-header weekend">Domingo</div>
+                    <div class="calendar-day-header">Segunda</div>
+                    <div class="calendar-day-header">Terça</div>
+                    <div class="calendar-day-header">Quarta</div>
+                    <div class="calendar-day-header">Quinta</div>
+                    <div class="calendar-day-header">Sexta</div>
+                    <div class="calendar-day-header weekend">Sábado</div>
+                </div>
+                <div class="calendar-grid">
+                    <!-- Semana 1: 30/04 (qui) cai fora, maio começa na sexta -->
+                    <div class="calendar-cell empty"></div>
+                    <div class="calendar-cell empty"></div>
+                    <div class="calendar-cell empty"></div>
+                    <div class="calendar-cell empty"></div>
+                    <div class="calendar-cell empty"></div>
+                    <!-- 01/05 - Sexta -->
+                    <div class="calendar-cell feriado-bg">
+                        <div class="cell-date">1</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte I</span>
+                            <span class="cell-event ev-trabalhador">🧑‍🏭 Dia do Trabalhador - Feriado</span>
+                            <span class="cell-event ev-fds">🔥 Oferta FDS</span>
+                        </div>
+                    </div>
+                    <!-- 02/05 - Sábado -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">2</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte I</span>
+                            <span class="cell-event ev-fds">🔥 Oferta FDS</span>
+                        </div>
+                    </div>
+                    <!-- 03/05 - Domingo -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">3</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte I</span>
+                            <span class="cell-event ev-fds">🔥 Oferta FDS</span>
+                        </div>
+                    </div>
+                    <!-- 04/05 - Segunda -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">4</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte I</span>
+                            <span class="cell-event ev-maes">💐 Campanha Dia das Mães</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                        </div>
+                    </div>
+                    <!-- 05/05 - Terça -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">5</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte I</span>
+                            <span class="cell-event ev-maes">💐 Campanha Dia das Mães</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                        </div>
+                    </div>
+                    <!-- 06/05 - Quarta -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">6</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte I</span>
+                            <span class="cell-event ev-maes">💐 Campanha Dia das Mães</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                        </div>
+                    </div>
+                    <!-- 07/05 - Quinta -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">7</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte I</span>
+                            <span class="cell-event ev-maes">💐 Campanha Dia das Mães</span>
+                            <span class="cell-event ev-mp">⭐ Dia D Marca Própria</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                        </div>
+                    </div>
+                    <!-- 08/05 - Sexta -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">8</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte I</span>
+                            <span class="cell-event ev-maes">💐 Campanha Dia das Mães</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                        </div>
+                    </div>
+                    <!-- 09/05 - Sábado -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date weekend">9</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte I</span>
+                            <span class="cell-event ev-maes">💐 Campanha Dia das Mães</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                        </div>
+                    </div>
+                    <!-- 10/05 - Domingo -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date weekend">10</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II</span>
+                            <span class="cell-event ev-maes">💐 Campanha Dia das Mães</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                            <span class="cell-event ev-mulher">👩 Dia das Mães</span>
+                        </div>
+                    </div>
+                    <!-- 11/05 - Segunda -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">11</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II</span>
+                            <span class="cell-event ev-maes">💐 Campanha Dia das Mães</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span>
+                        </div>
+                    </div>
+                    <!-- 12/05 - Terça -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">12</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II</span>
+                            <span class="cell-event ev-maes">💐 Campanha Dia das Mães</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span>
+                        </div>
+                    </div>
+                    <!-- 13/05 - Quarta -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">13</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II</span>
+                            <span class="cell-event ev-maes">💐 Campanha Dia das Mães</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span>
+                        </div>
+                    </div>
+                    <!-- 14/05 - Quinta -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">14</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
+                            <span class="cell-event ev-maes">💐 Campanha Dia das Mães</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span>
+                        </div>
+                    </div>
+                    <!-- 15/05 - Sexta -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">15</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
+                            <span class="cell-event ev-maes">💐 Campanha Dia das Mães</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span>
+                        </div>
+                    </div>
+                    <!-- 16/05 - Sábado -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date weekend">16</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
+                            <span class="cell-event ev-maes">💐 Campanha Dia das Mães</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span>
+                        </div>
+                    </div>
+                    <!-- 17/05 - Domingo -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">17</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos Esportivos e Vitaminas</span>
+                        </div>
+                    </div>
+                    <!-- 18/05 - Segunda -->
+                    <div class="calendar-cell">
+                        <div class="cell-date">18</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
+                        </div>
+                    </div>
+                    <!-- 19/05 - Terça -->
+                    <div class="calendar-cell">
+                        <div class="cell-date">19</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
+                        </div>
+                    </div>
+                    <!-- 20/05 - Quarta -->
+                    <div class="calendar-cell">
+                        <div class="cell-date">20</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
+                        </div>
+                    </div>
+                    <!-- 21/05 - Quinta -->
+                    <div class="calendar-cell">
+                        <div class="cell-date">21</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
+                            <span class="cell-event ev-generico">💊 Dia do Genérico</span>
+                        </div>
+                    </div>
+                    <!-- 22/05 - Sexta -->
+                    <div class="calendar-cell">
+                        <div class="cell-date">22</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
+                            <span class="cell-event ev-generico">💊 Dia do Genérico</span>
+                        </div>
+                    </div>
+                    <!-- 23/05 - Sábado -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">23</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
+                            <span class="cell-event ev-generico">💊 Dia do Genérico</span>
+                        </div>
+                    </div>
+                    <!-- 24/05 - Domingo -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">24</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
+                        </div>
+                    </div>
+                    <!-- 25/05 - Segunda -->
+                    <div class="calendar-cell">
+                        <div class="cell-date">25</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
+                        </div>
+                    </div>
+                    <!-- 26/05 - Terça -->
+                    <div class="calendar-cell dli-bg">
+                        <div class="cell-date">26</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
+                            <span class="cell-event ev-dli">🦕 DLI</span>
+                        </div>
+                    </div>
+                    <!-- 27/05 - Quarta -->
+                    <div class="calendar-cell dli-bg">
+                        <div class="cell-date">27</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-encarte">📰 Encarte II + CMP</span>
+                            <span class="cell-event ev-dli">🦕 DLI</span>
+                        </div>
+                    </div>
+                    <!-- 28/05 - Quinta -->
+                    <div class="calendar-cell dli-bg">
+                        <div class="cell-date">28</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dli">🦕 DLI</span>
+                        </div>
+                    </div>
+                    <!-- 29/05 - Sexta -->
+                    <div class="calendar-cell dli-bg">
+                        <div class="cell-date">29</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dli">🦕 DLI</span>
+                        </div>
+                    </div>
+                    <!-- 30/05 - Sábado -->
+                    <div class="calendar-cell dli-bg">
+                        <div class="cell-date weekend">30</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dli">🦕 DLI</span>
+                        </div>
+                    </div>
+                    <!-- 31/05 - Domingo -->
+                    <div class="calendar-cell dli-bg">
+                        <div class="cell-date weekend">31</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-dli">🦕 DLI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-section">
+                <h3 class="section-title">📋 Resumo das Campanhas - Maio 2026</h3>
+                <div class="timeline">
+                    <div class="timeline-item"><div class="timeline-dates">30/04 - 09/05</div><div class="timeline-name">📰 Encarte I</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">10 - 13</div><div class="timeline-name">📰 Encarte II</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">14 - 27</div><div class="timeline-name">📰 Encarte II + CMP</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">01</div><div class="timeline-name">🧑‍🏭 Dia do Trabalhador - Feriado</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">01 - 03</div><div class="timeline-name">🔥 Oferta FDS</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">04 - 14</div><div class="timeline-name">💐 Campanha Dia das Mães</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">04 - 10</div><div class="timeline-name">✨ Semana do Dermo</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">07</div><div class="timeline-name">⭐ Dia D Marca Própria</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">10</div><div class="timeline-name">👩 Dia das Mães</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">11 - 17</div><div class="timeline-name">💪 Semana Suplementos Esportivos e Vitaminas</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">21 - 23</div><div class="timeline-name">💊 Dia do Genérico</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">26 - 31</div><div class="timeline-name">🦕 DLI</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== MAIO 2026 DIGITAL ==================== -->
+        <!-- Maio começa na Sexta (dia 1) -->
+        <section class="month-view" id="maio-digital">
+            <div class="calendar-section">
+                <div style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); color: white; padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; text-align: center;">
+                    <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">📱 CALENDÁRIO DIGITAL - MAIO 2026</h2>
+                    <p style="font-size: 0.9rem; opacity: 0.95;">Campanhas exclusivas para canais digitais</p>
+                </div>
+                <div class="calendar-header">
+                    <div class="calendar-day-header weekend">Domingo</div>
+                    <div class="calendar-day-header">Segunda</div>
+                    <div class="calendar-day-header">Terça</div>
+                    <div class="calendar-day-header">Quarta</div>
+                    <div class="calendar-day-header">Quinta</div>
+                    <div class="calendar-day-header">Sexta</div>
+                    <div class="calendar-day-header weekend">Sábado</div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-cell empty"></div>
+                    <div class="calendar-cell empty"></div>
+                    <div class="calendar-cell empty"></div>
+                    <div class="calendar-cell empty"></div>
+                    <div class="calendar-cell empty"></div>
+                    <!-- 01/05 Sex - Feriado -->
+                    <div class="calendar-cell feriado-bg">
+                        <div class="cell-date">1</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-trabalhador">🧑‍🏭 Dia do Trabalhador</span>
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <!-- 02/05 Sab -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">2</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <!-- 03/05 Dom -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">3</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <!-- 04/05 Seg -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">4</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-maes">💐 Campanha das Mães</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                        </div>
+                    </div>
+                    <!-- 05/05 Ter - Data Dobrada -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">5</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-maes">💐 Campanha das Mães</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                            <span class="cell-event" style="background:#f59e0b;color:#7c2d12;">🚚 Data Dobrada</span>
+                        </div>
+                    </div>
+                    <!-- 06/05 Qua -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">6</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-maes">💐 Campanha das Mães</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                        </div>
+                    </div>
+                    <!-- 07/05 Qui - Semana D -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">7</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-maes">💐 Campanha das Mães</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                            <span class="cell-event ev-mp">📅 Semana D</span>
+                        </div>
+                    </div>
+                    <!-- 08/05 Sex -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">8</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-maes">💐 Campanha das Mães</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                            <span class="cell-event ev-mp">📅 Semana D</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <!-- 09/05 Sab -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date weekend">9</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-maes">💐 Campanha das Mães</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                            <span class="cell-event ev-mp">📅 Semana D</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <!-- 10/05 Dom - Dia das Mães -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date weekend">10</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-maes">💐 Campanha das Mães</span>
+                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
+                            <span class="cell-event ev-mp">📅 Semana D</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <!-- 11/05 Seg -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">11</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-maes">💐 Campanha das Mães</span>
+                            <span class="cell-event ev-mp">📅 Semana D</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos e Vitaminas</span>
+                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
+                        </div>
+                    </div>
+                    <!-- 12/05 Ter -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">12</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-maes">💐 Campanha das Mães</span>
+                            <span class="cell-event ev-mp">📅 Semana D</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos e Vitaminas</span>
+                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
+                        </div>
+                    </div>
+                    <!-- 13/05 Qua -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">13</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-maes">💐 Campanha das Mães</span>
+                            <span class="cell-event ev-mp">📅 Semana D</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos e Vitaminas</span>
+                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
+                        </div>
+                    </div>
+                    <!-- 14/05 Qui -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">14</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-maes">💐 Campanha das Mães</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos e Vitaminas</span>
+                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
+                        </div>
+                    </div>
+                    <!-- 15/05 Sex -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date">15</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-maes">💐 Campanha das Mães</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos e Vitaminas</span>
+                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <!-- 16/05 Sab -->
+                    <div class="calendar-cell maes-bg">
+                        <div class="cell-date weekend">16</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-maes">💐 Campanha das Mães</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos e Vitaminas</span>
+                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <!-- 17/05 Dom -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">17</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-vitaminas">💪 Semana Suplementos e Vitaminas</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <!-- 18/05 Seg - Semana Baby -->
+                    <div class="calendar-cell">
+                        <div class="cell-date">18</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event" style="background:#fecaca;color:#b91c1c;">👶 Semana Baby E-commerce</span>
+                        </div>
+                    </div>
+                    <!-- 19/05 Ter -->
+                    <div class="calendar-cell">
+                        <div class="cell-date">19</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event" style="background:#fecaca;color:#b91c1c;">👶 Semana Baby E-commerce</span>
+                        </div>
+                    </div>
+                    <!-- 20/05 Qua -->
+                    <div class="calendar-cell">
+                        <div class="cell-date">20</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event" style="background:#fecaca;color:#b91c1c;">👶 Semana Baby E-commerce</span>
+                        </div>
+                    </div>
+                    <!-- 21/05 Qui - Dia do Genérico -->
+                    <div class="calendar-cell">
+                        <div class="cell-date">21</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event" style="background:#fecaca;color:#b91c1c;">👶 Semana Baby E-commerce</span>
+                            <span class="cell-event ev-generico">💊 Dia do Genérico</span>
+                        </div>
+                    </div>
+                    <!-- 22/05 Sex -->
+                    <div class="calendar-cell">
+                        <div class="cell-date">22</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event" style="background:#fecaca;color:#b91c1c;">👶 Semana Baby E-commerce</span>
+                            <span class="cell-event ev-generico">💊 Dia do Genérico</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <!-- 23/05 Sab -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">23</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event" style="background:#fecaca;color:#b91c1c;">👶 Semana Baby E-commerce</span>
+                            <span class="cell-event ev-generico">💊 Dia do Genérico</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <!-- 24/05 Dom -->
+                    <div class="calendar-cell">
+                        <div class="cell-date weekend">24</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <!-- 25/05 Seg -->
+                    <div class="calendar-cell">
+                        <div class="cell-date">25</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                        </div>
+                    </div>
+                    <!-- 26/05 Ter - DLI -->
+                    <div class="calendar-cell dli-bg">
+                        <div class="cell-date">26</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-dli">🦕 DLI</span>
+                        </div>
+                    </div>
+                    <!-- 27/05 Qua -->
+                    <div class="calendar-cell dli-bg">
+                        <div class="cell-date">27</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-dli">🦕 DLI</span>
+                        </div>
+                    </div>
+                    <!-- 28/05 Qui -->
+                    <div class="calendar-cell dli-bg">
+                        <div class="cell-date">28</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-dli">🦕 DLI</span>
+                        </div>
+                    </div>
+                    <!-- 29/05 Sex -->
+                    <div class="calendar-cell dli-bg">
+                        <div class="cell-date">29</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-dli">🦕 DLI</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <!-- 30/05 Sab -->
+                    <div class="calendar-cell dli-bg">
+                        <div class="cell-date weekend">30</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-dli">🦕 DLI</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                    <!-- 31/05 Dom -->
+                    <div class="calendar-cell dli-bg">
+                        <div class="cell-date weekend">31</div>
+                        <div class="cell-events">
+                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
+                            <span class="cell-event ev-dli">🦕 DLI</span>
+                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-section">
+                <h3 class="section-title">📋 Resumo das Campanhas Digitais - Maio 2026</h3>
+                <div class="timeline">
+                    <div class="timeline-item"><div class="timeline-dates">01 - 31</div><div class="timeline-name">💰 Tá Barato no App</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">01</div><div class="timeline-name">🧑‍🏭 Dia do Trabalhador</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">01-03, 08-10, 15-17, 22-24, 29-31</div><div class="timeline-name">⚡ Oferta Relâmpago (Sex/Sáb/Dom)</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">04 - 14</div><div class="timeline-name">💐 Campanha das Mães</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">04 - 10</div><div class="timeline-name">✨ Semana do Dermo</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">05</div><div class="timeline-name">🚚 Data Dobrada</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">07 - 13</div><div class="timeline-name">📅 Semana D</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">11 - 17</div><div class="timeline-name">💪 Semana Suplementos e Vitaminas</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">11 - 16</div><div class="timeline-name">💊 Semana do Genérico Digital</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">18 - 23</div><div class="timeline-name">👶 Semana Baby E-commerce</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">21 - 23</div><div class="timeline-name">💊 Dia do Genérico</div></div>
+                    <div class="timeline-item"><div class="timeline-dates">26 - 31</div><div class="timeline-name">🦕 DLI</div></div>
                 </div>
             </div>
         </section>
@@ -731,6 +1180,7 @@
                     <div class="calendar-cell"><div class="cell-date">23</div><div class="cell-events"><span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span><span class="cell-event" style="background:#fecaca;color:#b91c1c;">👶 Semana Baby</span><span class="cell-event" style="background:#d1d5db;color:#374151;">🧹 Sicoob (suplementos e material de limpeza)</span></div></div>
                     <div class="calendar-cell"><div class="cell-date">24</div><div class="cell-events"><span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span><span class="cell-event" style="background:#fecaca;color:#b91c1c;">👶 Semana Baby</span><span class="cell-event" style="background:#d1d5db;color:#374151;">🧹 Sicoob (suplementos e material de limpeza)</span></div></div>
                     <div class="calendar-cell"><div class="cell-date">25</div><div class="cell-events"><span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span><span class="cell-event" style="background:#fecaca;color:#b91c1c;">👶 Semana Baby</span><span class="cell-event" style="background:#d1d5db;color:#374151;">🧹 Sicoob (suplementos e material de limpeza)</span></div></div>
+                    <!-- AJUSTE: Dia do Genérico apenas 26 e 27 no digital também -->
                     <div class="calendar-cell pascoa-bg"><div class="cell-date">26</div><div class="cell-events"><span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span><span class="cell-event" style="background:#fecaca;color:#b91c1c;">👶 Semana Baby</span><span class="cell-event ev-generico">💊 Dia do Genérico</span></div></div>
                     <div class="calendar-cell pascoa-bg"><div class="cell-date">27</div><div class="cell-events"><span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span><span class="cell-event" style="background:#fecaca;color:#b91c1c;">👶 Semana Baby</span><span class="cell-event ev-generico">💊 Dia do Genérico</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago - Páscoa</span></div></div>
                     <div class="calendar-cell pascoa-bg"><div class="cell-date weekend">28</div><div class="cell-events"><span class="cell-event ev-pascoa">🐰 Encarte 2 - Pré-Páscoa</span><span class="cell-event" style="background:#fecaca;color:#b91c1c;">👶 Semana Baby</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago - Páscoa</span></div></div>
@@ -780,267 +1230,39 @@
                     <div class="calendar-day-header weekend">Sábado</div>
                 </div>
                 <div class="calendar-grid">
-                    <!-- Abril começa na Quarta -->
                     <div class="calendar-cell empty"></div>
                     <div class="calendar-cell empty"></div>
                     <div class="calendar-cell empty"></div>
-                    <!-- Dia 1 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date">1</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                        </div>
-                    </div>
-                    <!-- Dia 2 -->
-                    <div class="calendar-cell pascoa-bg">
-                        <div class="cell-date">2</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago - Páscoa</span>
-                        </div>
-                    </div>
-                    <!-- Dia 3 -->
-                    <div class="calendar-cell pascoa-bg">
-                        <div class="cell-date">3</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago - Páscoa</span>
-                        </div>
-                    </div>
-                    <!-- Dia 4 -->
-                    <div class="calendar-cell pascoa-bg">
-                        <div class="cell-date weekend">4</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago - Páscoa</span>
-                            <span class="cell-event" style="background:#f59e0b;color:#7c2d12;">🚚 Data Dobrada (frete grátis)</span>
-                        </div>
-                    </div>
-                    <!-- Dia 5 -->
-                    <div class="calendar-cell pascoa-bg">
-                        <div class="cell-date weekend">5</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-pascoa">🐣 Páscoa</span>
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago - Páscoa</span>
-                        </div>
-                    </div>
-                    <!-- Dia 6 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date weekend">6</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
-                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
-                        </div>
-                    </div>
-                    <!-- Dia 7 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date">7</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
-                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
-                        </div>
-                    </div>
-                    <!-- Dia 8 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date">8</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
-                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
-                            <span class="cell-event ev-mp">📅 Semana D (marca própria)</span>
-                        </div>
-                    </div>
-                    <!-- Dia 9 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date">9</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
-                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
-                            <span class="cell-event ev-mp">📅 Semana D (marca própria)</span>
-                        </div>
-                    </div>
-                    <!-- Dia 10 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date">10</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
-                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
-                            <span class="cell-event ev-mp">📅 Semana D (marca própria)</span>
-                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
-                        </div>
-                    </div>
-                    <!-- Dia 11 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date">11</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
-                            <span class="cell-event ev-generico">💊 Semana do Genérico Digital</span>
-                            <span class="cell-event ev-mp">📅 Semana D (marca própria)</span>
-                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
-                        </div>
-                    </div>
-                    <!-- Dia 12 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date weekend">12</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-dermo">✨ Semana do Dermo</span>
-                            <span class="cell-event ev-mp">📅 Semana D (marca própria)</span>
-                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
-                        </div>
-                    </div>
-                    <!-- Dia 13 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date weekend">13</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-mp">📅 Semana D (marca própria)</span>
-                            <span class="cell-event ev-beijo">💋 Dia do Beijo</span>
-                            <span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span>
-                        </div>
-                    </div>
-                    <!-- Dia 14 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date">14</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-mp">📅 Semana D (marca própria)</span>
-                            <span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span>
-                        </div>
-                    </div>
-                    <!-- Dia 15 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date">15</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span>
-                        </div>
-                    </div>
-                    <!-- Dia 16 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date">16</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span>
-                        </div>
-                    </div>
-                    <!-- Dia 17 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date">17</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span>
-                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
-                        </div>
-                    </div>
-                    <!-- Dia 18 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date weekend">18</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span>
-                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
-                        </div>
-                    </div>
-                    <!-- Dia 19 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date weekend">19</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span>
-                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
-                        </div>
-                    </div>
-                    <!-- Dia 20 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date">20</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                        </div>
-                    </div>
-                    <!-- Dia 21 -->
-                    <div class="calendar-cell feriado-bg">
-                        <div class="cell-date feriado">21</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-feriado">🏛️ Tiradentes - Feriado</span>
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                        </div>
-                    </div>
-                    <!-- Dia 22 -->
-                    <div class="calendar-cell">
-                        <div class="cell-date">22</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                        </div>
-                    </div>
-                    <!-- Dia 23 -->
-                    <div class="calendar-cell pet-bg">
-                        <div class="cell-date">23</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-pet">🐾 Mundo Pet</span>
-                        </div>
-                    </div>
-                    <!-- Dia 24 -->
-                    <div class="calendar-cell pet-bg">
-                        <div class="cell-date">24</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-pet">🐾 Mundo Pet</span>
-                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
-                        </div>
-                    </div>
-                    <!-- Dia 25 -->
-                    <div class="calendar-cell pet-bg">
-                        <div class="cell-date weekend">25</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-fds">💰 Tá Barato no App</span>
-                            <span class="cell-event ev-pet">🐾 Mundo Pet</span>
-                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
-                        </div>
-                    </div>
-                    <!-- Dia 26 -->
-                    <div class="calendar-cell pet-bg">
-                        <div class="cell-date weekend">26</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-pet">🐾 Mundo Pet</span>
-                            <span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span>
-                        </div>
-                    </div>
-                    <!-- Dia 27 -->
-                    <div class="calendar-cell baby-bg">
-                        <div class="cell-date">27</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-baby">👶 Feirão Baby</span>
-                        </div>
-                    </div>
-                    <!-- Dia 28 -->
-                    <div class="calendar-cell baby-bg">
-                        <div class="cell-date">28</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-baby">👶 Feirão Baby</span>
-                        </div>
-                    </div>
-                    <!-- Dia 29 -->
-                    <div class="calendar-cell baby-bg">
-                        <div class="cell-date">29</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-baby">👶 Feirão Baby</span>
-                        </div>
-                    </div>
-                    <!-- Dia 30 -->
-                    <div class="calendar-cell baby-bg">
-                        <div class="cell-date">30</div>
-                        <div class="cell-events">
-                            <span class="cell-event ev-baby">👶 Feirão Baby</span>
-                        </div>
-                    </div>
+                    <div class="calendar-cell"><div class="cell-date">1</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span></div></div>
+                    <div class="calendar-cell pascoa-bg"><div class="cell-date">2</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago - Páscoa</span></div></div>
+                    <div class="calendar-cell pascoa-bg"><div class="cell-date">3</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago - Páscoa</span></div></div>
+                    <div class="calendar-cell pascoa-bg"><div class="cell-date weekend">4</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago - Páscoa</span><span class="cell-event" style="background:#f59e0b;color:#7c2d12;">🚚 Data Dobrada (frete grátis)</span></div></div>
+                    <div class="calendar-cell pascoa-bg"><div class="cell-date weekend">5</div><div class="cell-events"><span class="cell-event ev-pascoa">🐣 Páscoa</span><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago - Páscoa</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date weekend">6</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-dermo">✨ Semana do Dermo</span><span class="cell-event ev-generico">💊 Semana do Genérico Digital</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">7</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-dermo">✨ Semana do Dermo</span><span class="cell-event ev-generico">💊 Semana do Genérico Digital</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">8</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-dermo">✨ Semana do Dermo</span><span class="cell-event ev-generico">💊 Semana do Genérico Digital</span><span class="cell-event ev-mp">📅 Semana D (marca própria)</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">9</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-dermo">✨ Semana do Dermo</span><span class="cell-event ev-generico">💊 Semana do Genérico Digital</span><span class="cell-event ev-mp">📅 Semana D (marca própria)</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">10</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-dermo">✨ Semana do Dermo</span><span class="cell-event ev-generico">💊 Semana do Genérico Digital</span><span class="cell-event ev-mp">📅 Semana D (marca própria)</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">11</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-dermo">✨ Semana do Dermo</span><span class="cell-event ev-generico">💊 Semana do Genérico Digital</span><span class="cell-event ev-mp">📅 Semana D (marca própria)</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date weekend">12</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-dermo">✨ Semana do Dermo</span><span class="cell-event ev-mp">📅 Semana D (marca própria)</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date weekend">13</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-mp">📅 Semana D (marca própria)</span><span class="cell-event ev-beijo">💋 Dia do Beijo</span><span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">14</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-mp">📅 Semana D (marca própria)</span><span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">15</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">16</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">17</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date weekend">18</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date weekend">19</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-vitaminas">💪 Semana dos Suplementos e Vitaminas</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">20</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span></div></div>
+                    <div class="calendar-cell feriado-bg"><div class="cell-date feriado">21</div><div class="cell-events"><span class="cell-event ev-feriado">🏛️ Tiradentes - Feriado</span><span class="cell-event ev-fds">💰 Tá Barato no App</span></div></div>
+                    <div class="calendar-cell"><div class="cell-date">22</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span></div></div>
+                    <div class="calendar-cell pet-bg"><div class="cell-date">23</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-pet">🐾 Mundo Pet</span></div></div>
+                    <div class="calendar-cell pet-bg"><div class="cell-date">24</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-pet">🐾 Mundo Pet</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span></div></div>
+                    <div class="calendar-cell pet-bg"><div class="cell-date weekend">25</div><div class="cell-events"><span class="cell-event ev-fds">💰 Tá Barato no App</span><span class="cell-event ev-pet">🐾 Mundo Pet</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span></div></div>
+                    <div class="calendar-cell pet-bg"><div class="cell-date weekend">26</div><div class="cell-events"><span class="cell-event ev-pet">🐾 Mundo Pet</span><span class="cell-event ev-limpeza">⚡ Oferta Relâmpago</span></div></div>
+                    <div class="calendar-cell baby-bg"><div class="cell-date">27</div><div class="cell-events"><span class="cell-event ev-baby">👶 Feirão Baby</span></div></div>
+                    <div class="calendar-cell baby-bg"><div class="cell-date">28</div><div class="cell-events"><span class="cell-event ev-baby">👶 Feirão Baby</span></div></div>
+                    <div class="calendar-cell baby-bg"><div class="cell-date">29</div><div class="cell-events"><span class="cell-event ev-baby">👶 Feirão Baby</span></div></div>
+                    <div class="calendar-cell baby-bg"><div class="cell-date">30</div><div class="cell-events"><span class="cell-event ev-baby">👶 Feirão Baby</span></div></div>
                     <div class="calendar-cell empty"></div>
                     <div class="calendar-cell empty"></div>
                 </div>
@@ -1089,6 +1311,9 @@
                 <div class="legend-item"><span>🐾</span> Mundo Pet</div>
                 <div class="legend-item"><span>❤️</span> Cuidado com o Coração</div>
                 <div class="legend-item"><span>👶</span> Feirão Baby</div>
+                <div class="legend-item"><span>💐</span> Campanha Dia das Mães</div>
+                <div class="legend-item"><span>🧑‍🏭</span> Dia do Trabalhador</div>
+                <div class="legend-item"><span>📋</span> DLI</div>
             </div>
         </section>
     </main>
