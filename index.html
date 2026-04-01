@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendário Comercial 2026 | Farmácia Indiana</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -1327,6 +1330,22 @@
                 document.getElementById(this.getAttribute('data-month')).classList.add('active');
             });
         });
+    </script>
+
+    <script>
+        // Força sempre a versão mais recente — evita cache do GitHub Pages
+        (function() {
+            const VERSION = '20260401-001';
+            const key = 'cal_version';
+            const stored = sessionStorage.getItem(key);
+            if (stored !== VERSION) {
+                sessionStorage.setItem(key, VERSION);
+                // Só recarrega se vier de cache (não na primeira visita)
+                if (stored !== null) {
+                    window.location.reload(true);
+                }
+            }
+        })();
     </script>
 </body>
 </html>
