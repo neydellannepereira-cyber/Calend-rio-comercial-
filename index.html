@@ -1333,16 +1333,17 @@
     </script>
 
     <script>
-        // Força sempre a versão mais recente — evita cache do GitHub Pages
+        // Anti-cache agressivo: recarrega buscando sempre do servidor
         (function() {
-            const VERSION = '20260401-001';
-            const key = 'cal_version';
-            const stored = sessionStorage.getItem(key);
-            if (stored !== VERSION) {
-                sessionStorage.setItem(key, VERSION);
-                // Só recarrega se vier de cache (não na primeira visita)
-                if (stored !== null) {
-                    window.location.reload(true);
+            const VERSION = '20260401-v3';
+            const key = 'cal_ver';
+            if (localStorage.getItem(key) !== VERSION) {
+                localStorage.setItem(key, VERSION);
+                // Adiciona timestamp na URL para burlar cache do GitHub Pages
+                const url = new URL(window.location.href);
+                if (!url.searchParams.get('v')) {
+                    url.searchParams.set('v', VERSION);
+                    window.location.replace(url.toString());
                 }
             }
         })();
