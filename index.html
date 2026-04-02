@@ -2033,15 +2033,34 @@
     </script>
 
     <script>
-        // Anti-cache agressivo: recarrega buscando sempre do servidor
-        (function() {
-            const VERSION = '20260402-v3';
-            const key = 'cal_ver';
-            if (localStorage.getItem(key) !== VERSION) {
-                localStorage.setItem(key, VERSION);
-                // Adiciona timestamp na URL para burlar cache do GitHub Pages
+        // ============================================================
+        // ANTI-CACHE DEFINITIVO — GitHub Pages
+        // A cada nova versão do HTML, incrementar VERSION abaixo.
+        // O browser vai SEMPRE buscar do servidor na primeira visita
+        // de cada sessão, ignorando qualquer cache local.
+        // ============================================================
+        (function () {
+            const VERSION = '20260402-v4';
+            const KEY = 'cal_ver';
+
+            const stored = localStorage.getItem(KEY);
+
+            if (stored !== VERSION) {
+                // Nova versão detectada: limpa tudo e recarrega do servidor
+                localStorage.clear();
+                sessionStorage.clear();
+                localStorage.setItem(KEY, VERSION);
+
+                // Força busca no servidor adicionando ?v= na URL
                 const url = new URL(window.location.href);
-                if (!url.searchParams.get('v')) {
+                url.searchParams.set('v', VERSION);
+                // replace=true para não criar histórico extra
+                window.location.replace(url.toString());
+            } else {
+                // Mesma versão: garante que o parâmetro v está na URL
+                // (para o GitHub Pages não servir cache)
+                const url = new URL(window.location.href);
+                if (url.searchParams.get('v') !== VERSION) {
                     url.searchParams.set('v', VERSION);
                     window.location.replace(url.toString());
                 }
